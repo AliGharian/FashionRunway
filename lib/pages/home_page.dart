@@ -1,6 +1,7 @@
 import 'package:fashion_runway/constants.dart';
 import 'package:fashion_runway/utilities/page_change_notifier.dart';
 import 'package:fashion_runway/utilities/responsive_controller.dart';
+import 'package:fashion_runway/widgets/navbar.dart';
 import 'package:fashion_runway/widgets/runway.dart';
 import 'package:fashion_runway/widgets/scrollable_list.dart';
 import 'package:fashion_runway/widgets/side_nav.dart';
@@ -58,6 +59,7 @@ class SmallChild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Navbar(),
         Runway(controller, true),
         ScrollableList(true),
       ],

@@ -27,7 +27,7 @@ class ScrollableList extends StatelessWidget {
           );
         return Container(
           color: Colors.white,
-          height: isOnMobile ? size.height * 1 / 2 : size.height,
+          height: isOnMobile ? size.height * 4 / 9 : size.height,
           width: isOnMobile ? size.width : size.width * 2 / 9,
           child: ListView(
             controller: _scrollController,

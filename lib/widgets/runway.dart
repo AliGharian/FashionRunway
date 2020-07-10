@@ -26,7 +26,7 @@ class Runway extends StatelessWidget {
             tileMode: TileMode.clamp),
       ),
       width: isOnMobile ? size.width : size.width * 2 / 3,
-      height: isOnMobile ? size.height * 1 / 2 : size.height,
+      height: isOnMobile ? size.height * 4 / 9 : size.height,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[

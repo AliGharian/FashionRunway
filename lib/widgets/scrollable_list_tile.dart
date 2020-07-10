@@ -15,9 +15,10 @@ class ScrollableListTile extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.0),
       color: color,
-      height: isOnMobile ? size.height / 2 : size.height / 2,
+      height: isOnMobile ? size.height * 4 / 9 : size.height / 2,
       width: isOnMobile ? size.width / 2 : size.width * 2 / 9,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(
@@ -26,7 +27,8 @@ class ScrollableListTile extends StatelessWidget {
           ),
           Center(
             child: Image.asset(lookDetail.imageURL,
-                height: size.height / 2 - 130, fit: BoxFit.fitWidth),
+                height: size.height / 2 - (isOnMobile ? 160 : 130),
+                fit: BoxFit.fitWidth),
           ),
           Text(
             lookDetail.description,
