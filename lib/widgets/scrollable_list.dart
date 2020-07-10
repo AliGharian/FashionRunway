@@ -31,7 +31,7 @@ class ScrollableList extends StatelessWidget {
             children: lookDetails.map((LookDetail item) {
               return ScrollableListTile(
                 lookDetail: item,
-                color: kLightBlue,
+                color: Colors.white,
               );
             }).toList(),
           ),

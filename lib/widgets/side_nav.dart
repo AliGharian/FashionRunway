@@ -12,11 +12,11 @@ class SideNav extends StatelessWidget {
       height: size.height,
       width: size.width * 1 / 9,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           LogoType(text: 'MARC JACOBS'),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: items.map((String item) {
               return Text(
                 item,

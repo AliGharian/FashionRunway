@@ -1,6 +1,7 @@
 import 'package:fashion_runway/constants.dart';
 import 'package:fashion_runway/utilities/page_change_notifier.dart';
 import 'package:fashion_runway/utilities/responsive_controller.dart';
+import 'package:fashion_runway/widgets/runway.dart';
 import 'package:fashion_runway/widgets/scrollable_list.dart';
 import 'package:fashion_runway/widgets/side_nav.dart';
 import 'package:flutter/material.dart';
@@ -15,25 +16,27 @@ class HomePage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => PageNumberNotifier(_pageController),
       child: Scaffold(
-        body: Body(),
+        body: Body(_pageController),
       ),
     );
   }
 }
 
 class Body extends StatelessWidget {
-  // final PageController controller;
-  // Body(this.controller);
+  final PageController controller;
+  Body(this.controller);
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-      largeScreen: LargeChild(),
-      smallScreen: LargeChild(),
+      largeScreen: LargeChild(controller),
+      smallScreen: SmallChild(controller),
     );
   }
 }
 
 class LargeChild extends StatelessWidget {
+  final PageController controller;
+  LargeChild(this.controller);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -41,6 +44,7 @@ class LargeChild extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         SideNav(),
+        Runway(controller),
         ScrollableList(),
       ],
     );
@@ -48,8 +52,15 @@ class LargeChild extends StatelessWidget {
 }
 
 class SmallChild extends StatelessWidget {
+  final PageController controller;
+  SmallChild(this.controller);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: [
+        Runway(controller),
+        ScrollableList(),
+      ],
+    );
   }
 }
