@@ -116,11 +116,14 @@ class LookNumber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 40,
-      left: 40,
+      bottom: 20,
+      left: 20,
       child: Consumer<PageNumberNotifier>(
         builder: (context, notifier, child) {
-          number = notifier?.page?.toInt() ?? lookURLs.length - 1;
+          if (notifier.page == null)
+            number = lookURLs.length - 1;
+          else
+            number = notifier.page.toInt();
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -136,7 +139,8 @@ class LookNumber extends StatelessWidget {
                   ),
                   SizedBox(width: 8.0),
                   Opacity(
-                    opacity: 1 - (notifier?.page % 1 ?? 0.0),
+                    opacity:
+                        1 - (notifier.page != null ? notifier.page % 1 : 0.0),
                     child: Text(
                       '${number + 1}',
                       style: TextStyle(
@@ -167,8 +171,8 @@ class WelcomeText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 40,
-      left: 40,
+      top: 20,
+      left: 20,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -184,8 +188,8 @@ class WelcomeText extends StatelessWidget {
             height: 8.0,
           ),
           Text(
-            '''Lorem ipsum dolor sit amet, consectetur adipiscing
-elit, sed do eiusmod tempor incididunt ut 
+            '''Lorem ipsum dolor sit amet, consectetur adip
+elit, sed do eiusmod tempor incididunt
 labore et dolore magna aliqua. ''',
             style: TextStyle(
               color: kDarkBlue,

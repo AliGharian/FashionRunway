@@ -27,7 +27,7 @@ class ScrollableListTile extends StatelessWidget {
           ),
           Center(
             child: Image.asset(lookDetail.imageURL,
-                height: size.height / 2 - (isOnMobile ? 160 : 130),
+                height: size.height / 2 - (isOnMobile ? 170 : 130),
                 fit: BoxFit.fitWidth),
           ),
           Text(
