@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 class ScrollableListTile extends StatelessWidget {
   final LookDetail lookDetail;
   final Color color;
+  final bool isOnMobile;
 
-  ScrollableListTile({this.lookDetail, this.color});
+  ScrollableListTile({this.lookDetail, this.color, this.isOnMobile});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,8 @@ class ScrollableListTile extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.0),
       color: color,
-      height: size.height / 2,
+      height: isOnMobile ? size.height / 2 : size.height / 2,
+      width: isOnMobile ? size.width / 2 : size.width * 2 / 9,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

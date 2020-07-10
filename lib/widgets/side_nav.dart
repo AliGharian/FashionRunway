@@ -61,7 +61,7 @@ class TopIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(4.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

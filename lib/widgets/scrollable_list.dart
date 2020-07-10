@@ -7,6 +7,9 @@ import 'package:provider/provider.dart';
 
 class ScrollableList extends StatelessWidget {
   ScrollController _scrollController;
+  final bool isOnMobile;
+
+  ScrollableList(this.isOnMobile);
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +19,25 @@ class ScrollableList extends StatelessWidget {
       builder: (context, notifier, child) {
         if (_scrollController.hasClients)
           _scrollController.animateTo(
-            notifier.page * size.height,
+            isOnMobile
+                ? notifier.page * size.width
+                : notifier.page * size.height,
             curve: Curves.easeOut,
             duration: const Duration(milliseconds: 300),
           );
         return Container(
           color: Colors.white,
-          height: size.height,
-          width: size.width * 2 / 9,
+          height: isOnMobile ? size.height * 1 / 2 : size.height,
+          width: isOnMobile ? size.width : size.width * 2 / 9,
           child: ListView(
             controller: _scrollController,
-            scrollDirection: Axis.vertical,
+            scrollDirection: isOnMobile ? Axis.horizontal : Axis.vertical,
             shrinkWrap: true,
             children: lookDetails.map((LookDetail item) {
               return ScrollableListTile(
                 lookDetail: item,
                 color: Colors.white,
+                isOnMobile: isOnMobile,
               );
             }).toList(),
           ),

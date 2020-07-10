@@ -10,7 +10,8 @@ var widgetAspectRatio = cardAspectRatio * 1.2;
 
 class Runway extends StatelessWidget {
   final PageController controller;
-  Runway(this.controller);
+  final bool isOnMobile;
+  Runway(this.controller, this.isOnMobile);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,8 @@ class Runway extends StatelessWidget {
             stops: [0.0, 1.0],
             tileMode: TileMode.clamp),
       ),
-      width: size.width * 2 / 3,
-      height: size.height,
+      width: isOnMobile ? size.width : size.width * 2 / 3,
+      height: isOnMobile ? size.height * 1 / 2 : size.height,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[

@@ -44,8 +44,8 @@ class LargeChild extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         SideNav(),
-        Runway(controller),
-        ScrollableList(),
+        Runway(controller, false),
+        ScrollableList(false),
       ],
     );
   }
@@ -58,8 +58,8 @@ class SmallChild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Runway(controller),
-        ScrollableList(),
+        Runway(controller, true),
+        ScrollableList(true),
       ],
     );
   }
