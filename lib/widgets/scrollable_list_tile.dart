@@ -16,19 +16,22 @@ class ScrollableListTile extends StatelessWidget {
       color: color,
       height: size.height / 2,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            child: Image.asset(
-              lookDetail.imageURL,
-              height: size.height / 2 - 100,
-              fit: BoxFit.fitWidth,
-            ),
+          Icon(
+            Icons.favorite_border,
+            color: kDarkBlue,
+          ),
+          Center(
+            child: Image.asset(lookDetail.imageURL,
+                height: size.height / 2 - 130, fit: BoxFit.fitWidth),
           ),
           Text(
             lookDetail.description,
             style: TextStyle(
               color: kDarkBlue,
-              fontSize: 18.0,
+              fontSize: 16.0,
+              fontWeight: FontWeight.w400,
             ),
           ),
           Row(
@@ -38,11 +41,12 @@ class ScrollableListTile extends StatelessWidget {
                 '\$ ${lookDetail.price}',
                 style: TextStyle(
                   color: kDarkBlue,
-                  fontSize: 18.0,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               Icon(
-                Icons.favorite_border,
+                Icons.add,
                 color: kDarkBlue,
               ),
             ],

@@ -40,11 +40,14 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 20.0,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 160.0),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+        ),
       ),
     );
   }
