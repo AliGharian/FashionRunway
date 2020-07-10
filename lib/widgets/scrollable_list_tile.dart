@@ -34,11 +34,17 @@ class ScrollableListTile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Text(
+                '\$ ${lookDetail.price}',
+                style: TextStyle(
+                  color: kDarkBlue,
+                  fontSize: 18.0,
+                ),
+              ),
               Icon(
                 Icons.favorite_border,
                 color: kDarkBlue,
               ),
-              Text('\$ ${lookDetail.price}'),
             ],
           ),
         ],
