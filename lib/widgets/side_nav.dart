@@ -14,6 +14,7 @@ class SideNav extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          TopIcons(),
           LogoType(text: 'MARC JACOBS'),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -64,6 +65,32 @@ class LogoType extends StatelessWidget {
             fontSize: 30.0,
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TopIcons extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.shopping_basket,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.favorite_border,
+            color: Colors.white,
+          ),
+        ],
       ),
     );
   }
