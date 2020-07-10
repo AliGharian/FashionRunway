@@ -17,37 +17,21 @@ class SideNav extends StatelessWidget {
           TopIcons(),
           LogoType(text: 'MARC JACOBS'),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: items.map((String item) {
-              return Text(
-                item,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+              return Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Text(
+                  item,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
                 ),
               );
             }).toList(),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class MenuItem extends StatelessWidget {
-  final String title;
-  MenuItem({this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 160.0),
-      child: Text(
-        title,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
-        ),
       ),
     );
   }
