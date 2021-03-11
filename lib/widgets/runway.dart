@@ -74,6 +74,7 @@ class LookQueue extends StatelessWidget {
               var x = (currentPage - i);
               var start = _heavisideStep(x) * contraints.maxWidth / 3;
               var offset = (currentPage - i) * 100;
+              double y = max(x, 0.0005);
 
               var lookItem = Positioned.directional(
                 end: start,
@@ -81,7 +82,7 @@ class LookQueue extends StatelessWidget {
                 textDirection: TextDirection.ltr,
                 child: ImageFiltered(
                   imageFilter:
-                      ImageFilter.blur(sigmaX: (x) * 1, sigmaY: (x) * 1),
+                      ImageFilter.blur(sigmaX: (y) * 1, sigmaY: (y) * 1),
                   child: AspectRatio(
                     aspectRatio: contraints.maxHeight / contraints.maxWidth,
                     child: Opacity(
