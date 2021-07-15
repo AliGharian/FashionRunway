@@ -31,7 +31,6 @@ class Runway extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           LookQueue(),
-          LookNumber(),
           WelcomeText(),
           Positioned.fill(
             child: PageView.builder(
@@ -44,6 +43,7 @@ class Runway extends StatelessWidget {
               },
             ),
           ),
+          LookNumber(),
         ],
       ),
     );
@@ -153,11 +153,16 @@ class LookNumber extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                'SHOP THE LOOK',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 10.0,
+              InkWell(
+                onTap: () {
+                  print('hello world!');
+                },
+                child: Text(
+                  'SHOP THE LOOK',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 10.0,
+                  ),
                 ),
               ),
             ],
