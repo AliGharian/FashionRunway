@@ -1,13 +1,9 @@
+import 'package:fashion_runway/data/dummy_data.dart';
 import 'package:fashion_runway/pages/products_page.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
-List<String> items = [
-  'Home',
-  'Products',
-  'Contacts',
-  'About',
-];
+List items = slideNavBarItems;
 
 class SideNav extends StatelessWidget {
   @override
@@ -19,28 +15,71 @@ class SideNav extends StatelessWidget {
       height: size.height,
       width: size.width * 1 / 9,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SearchField(),
-          TopIcons(),
+          // SearchField(),
+          // TopIcons(),
           LogoType(text: 'MARC JACOBS'),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: items.map((String item) {
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.0),
-                child: InkWell(
-                  onTap: () {},
-                  child: Text(
-                    item,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8.0),
+            height: 400.0,
+            child: ListView(
+              children: items.map((item) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => ProductsPage()));
+                    },
+                    child: Row(
+                      children: [
+                        Icon(
+                          item['icon'],
+                          color: Colors.white,
+                          size: 20.0,
+                        ),
+                        SizedBox(width: 10.0),
+                        Text(
+                          item['title'].toString(),
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              );
-            }).toList(),
+                );
+              }).toList(),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(8.0),
+            child: InkWell(
+              onTap: () {},
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.logout_outlined,
+                    size: 20.0,
+                    color: Colors.white,
+                  ),
+                  SizedBox(width: 10.0),
+                  Text(
+                    'Logout',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
@@ -89,13 +128,15 @@ class LogoType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RotatedBox(
-      quarterTurns: 1,
-      child: Center(
+      quarterTurns: 0,
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 8.0),
         child: Text(
           text,
           style: TextStyle(
             color: Colors.yellow[700],
-            fontSize: 30.0,
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
