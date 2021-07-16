@@ -1,16 +1,16 @@
-# fashion_runway
+# Fashion Runway Web UI
 
-A new Flutter project.
+A Web UI Challenge Implemented by Flutter Framework.
 
-## Getting Started
+## Implementation:
+![](https://github.com/AliGharian/FashionRunway/blob/master/assets/Implementation.gif)
 
-This project is a starting point for a Flutter application.
+## It's a highly responsive web ui
+![](https://github.com/AliGharian/FashionRunway/blob/master/assets/Responsive.gif)
 
-A few resources to get you started if this is your first Flutter project:
+## Inspired by this design
+![](https://github.com/AliGharian/FashionRunway/blob/master/assets/Design.gif)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Design by George Kvasnikov on [Dribbble](https://dribbble.com/shots/6559622-Runway-Experience-Marc-Jacobs)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
