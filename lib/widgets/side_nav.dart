@@ -30,10 +30,7 @@ class SideNav extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 16.0),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (contex) => ProductsPage()));
+                      Navigator.pushNamed(context, '/categories');
                     },
                     child: Row(
                       children: [
