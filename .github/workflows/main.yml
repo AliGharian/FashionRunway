@@ -41,8 +41,10 @@ jobs:
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
+      env:
+         API_TOKEN_GITHUB: ${{ secrets.commit_token }}
       with:
-        token: ${{ secrets.commit_token }}
+        # github_token: ${{ secrets.commit_token }}
         publish_dir: ./build/web
         force_orphan: true
         user_name: ${{ secrets.user_name }}
