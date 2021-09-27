@@ -40,7 +40,7 @@ jobs:
     #     server-dir: /public_html/actions_test/
 
     - name: deploy
-      uses: aligharian/actions-gh-pages@v4
+      uses: peaceiris/actions-gh-pages@v3
       with:
         token: ${{ secrets.commit_token }}
         publish_dir: ./build/web
