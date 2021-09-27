@@ -40,9 +40,9 @@ jobs:
     #     server-dir: /public_html/actions_test/
 
     - name: deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: aligharian/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.commit_token }}
+        token: ${{ secrets.commit_token }}
         publish_dir: ./build/web
         force_orphan: true
         user_name: ${{ secrets.user_name }}
