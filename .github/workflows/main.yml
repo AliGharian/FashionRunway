@@ -42,9 +42,11 @@ jobs:
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        user_name: ${{ secrets.user_name }}
         github_token: ${{ secrets.commit_token }}
         publish_dir: ./build/web
+        force_orphan: true
+        user_name: ${{ secrets.user_name }}
+        user_email: ${{ secrets.user_email }}
       # with:
       #   github_token: ${{ secrets.commit_token }}
       #   publish_dir: ./build/web
