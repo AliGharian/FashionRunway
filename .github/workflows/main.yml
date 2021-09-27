@@ -30,11 +30,17 @@ jobs:
       run: flutter config --enable-web
     - name: 'Build Web App'
       run: flutter build web
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    # - name: 📂 Sync files
+    #   uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    #   with:
+    #     publish_dir: ./build/web
+    #     server: ftp.drsayareh.ir
+    #     username: ${{ secrets.ftp_username }}
+    #     password: ${{ secrets.ftp_password }}
+    #     server-dir: /public_html/actions_test/
+
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
+        commit_token: ${{ secrets.marcjacobs_token }}
         publish_dir: ./build/web
-        server: ftp.drsayareh.ir
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        server-dir: /public_html/actions_test/
